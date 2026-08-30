@@ -79,15 +79,15 @@ Everything below is still invented and needs the club's real details:
 
 ## The logo
 
-`public/logo.png` was made from the club patch: cropped square, masked to a
-circle, and given a transparent background so it sits on the dark page without
-a black box around it. The source is kept beside it as
-`public/logo-original.jpeg`.
+`public/logo.png` (880x880) was made from the club patch: cropped square,
+masked to a circle, and given a transparent background so it sits on the dark
+page without a black box around it. The circular mask also removes the sparkle
+watermark that was in the bottom-right corner of the source. The source is kept
+beside it as `public/logo-original.png`.
 
-The source image is only about 290px across, so the large patch in the hero is
-being upscaled. If there is a higher-resolution original — a vector file from
-whoever made the patch, or a large PNG — drop it in as `public/logo.png` and
-the hero gets noticeably sharper. Keep it square with a transparent background.
+To regenerate it from a new source, the emblem needs to end up square, centred,
+and transparent outside the circle — a plain rectangular crop will show a black
+box against the page background.
 
 If `logo.png` is ever missing, the site falls back to an "MRT" wordmark rather
 than showing a broken image.
