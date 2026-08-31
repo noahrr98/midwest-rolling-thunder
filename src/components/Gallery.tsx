@@ -35,13 +35,13 @@ function Frame({ index, onOpen }: { index: number; onOpen: (i: number) => void }
           onError={() => setStatus('failed')}
           className={`w-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04] ${
             status === 'ready' ? 'opacity-100' : 'absolute inset-0 opacity-0'
-          } brightness-[0.88] saturate-[0.7] group-hover:brightness-100 group-hover:saturate-100`}
+          } brightness-[0.94] saturate-[0.88] group-hover:brightness-105 group-hover:saturate-100`}
         />
       )}
 
       <span className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 bg-gradient-to-t from-ink-950/95 via-ink-950/30 to-transparent p-4 pt-14 opacity-0 transition-opacity duration-400 group-hover:opacity-100">
         <span className="text-sm font-medium text-bone-50">{photo.caption}</span>
-        <span className="font-mono text-[0.625rem] text-steel-300">{photo.year}</span>
+        {photo.year && <span className="font-mono text-[0.625rem] text-steel-300">{photo.year}</span>}
       </span>
     </button>
   )
@@ -137,8 +137,9 @@ export function Gallery() {
               />
               <figcaption className="mt-4 flex items-center justify-between gap-4 px-1">
                 <span className="text-sm text-bone-200">{gallery[active].caption}</span>
-                <span className="font-mono text-xs text-bone-600">
-                  {gallery[active].year} · {active + 1}/{gallery.length}
+                <span className="shrink-0 font-mono text-xs text-bone-600">
+                  {gallery[active].year ? `${gallery[active].year} · ` : ''}
+                  {active + 1}/{gallery.length}
                 </span>
               </figcaption>
             </motion.figure>

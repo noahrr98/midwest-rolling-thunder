@@ -33,10 +33,14 @@ export type Event = {
 }
 
 export type Photo = {
+  /** '/photos/name.jpg' for a file in public/photos, or a full URL. */
   src: string
+  /** What is actually in the picture. Screen readers and search engines read this. */
   alt: string
+  /** Shown on hover and under the photo in the lightbox. */
   caption: string
-  year: string
+  /** Optional. Omit it and no year is shown rather than a wrong one. */
+  year?: string
 }
 
 export type Officer = {
@@ -174,57 +178,51 @@ export const events: Event[] = [
 
 /* ---------------------------------------------------------------------------
  * PAST EVENT PHOTOS
- * Drop real photos into  public/photos/  and change src to '/photos/name.jpg'.
- * The placeholders below load from picsum.photos so the wall is never empty.
+ * Real club photos, in public/photos/. To add one: drop the file in that
+ * folder, copy a block below, and point src at it. Resize to about 1600px on
+ * the long edge first — a straight-off-the-phone photo is 5-8 MB and will make
+ * the page crawl. Order here is the order on the wall.
  * ------------------------------------------------------------------------- */
 export const gallery: Photo[] = [
   {
-    src: 'https://picsum.photos/seed/mrt-toyrun-lineup/900/1200?grayscale',
-    alt: 'Row of motorcycles staged in a parking lot before a charity run',
-    caption: 'Staging for the toy run',
-    year: '2025',
+    src: '/photos/staging-lot.jpg',
+    alt: 'A long row of motorcycles parked at an event lot, a custom orange Softail closest to the camera',
+    caption: 'Staged up before the run',
   },
   {
-    src: 'https://picsum.photos/seed/mrt-route30-pack/1200/800?grayscale',
-    alt: 'Group of riders on a two-lane highway between harvested fields',
-    caption: 'Route 7, south of Harrisonville',
-    year: '2025',
+    src: '/photos/swamp-on-the-road.jpg',
+    alt: 'A rider in an MRT vest leading traffic down a four-lane road',
+    caption: 'Swamp out front',
   },
   {
-    src: 'https://picsum.photos/seed/mrt-pantry-truck/1000/1000?grayscale',
-    alt: 'Volunteers loading boxes of canned goods into a box truck',
-    caption: 'Loading the fourth truck',
-    year: '2024',
+    src: '/photos/grocery-store-santa.jpg',
+    alt: 'Club members, families, and children posed with Santa in front of a Christmas tree inside a grocery store',
+    caption: 'Christmas shopping with Santa',
   },
   {
-    src: 'https://picsum.photos/seed/mrt-clubhouse-night/1200/900?grayscale',
-    alt: 'Members gathered outside a lit clubhouse in the evening',
-    caption: 'Thursday night, clubhouse lot',
-    year: '2025',
+    src: '/photos/roadside-lineup.jpg',
+    alt: 'Riders standing beside their bikes along a country road next to a cemetery',
+    caption: 'Kickstands down at the cemetery',
   },
   {
-    src: 'https://picsum.photos/seed/mrt-check-handoff/900/1150?grayscale',
-    alt: 'Oversized donation check handed to a local family',
-    caption: 'Handing off the Harvest Run total',
-    year: '2024',
+    src: '/photos/st-patricks-crew.jpg',
+    alt: 'Nine club members in MRT vests wearing green for St. Patrick\'s Day',
+    caption: 'Wearing green in March',
   },
   {
-    src: 'https://picsum.photos/seed/mrt-chili-cookoff/1200/850?grayscale',
-    alt: 'Long table of chili pots at an outdoor cookoff',
-    caption: 'The cookoff that started the argument',
-    year: '2024',
+    src: '/photos/fight-like-jack.jpg',
+    alt: 'A Fight Like Jack banner and an American flag hung between two tow-truck cranes over an event lot',
+    caption: 'Flying the flag for Jack',
   },
   {
-    src: 'https://picsum.photos/seed/mrt-kickstands/1000/1300?grayscale',
-    alt: 'Close view of chrome handlebars and a fuel tank at sunrise',
-    caption: 'Cold morning, warm start',
-    year: '2023',
+    src: '/photos/benefit-turnout.jpg',
+    alt: 'A large crowd of riders and families filling a parking lot at a benefit',
+    caption: 'The turnout',
   },
   {
-    src: 'https://picsum.photos/seed/mrt-escort/1200/800?grayscale',
-    alt: 'Police escort leading a long column of motorcycles down a city street',
-    caption: 'The Route 7 escort',
-    year: '2023',
+    src: '/photos/santa-street-glide.jpg',
+    alt: 'A rider in a full Santa suit on a blue Street Glide, pulling out onto the road',
+    caption: 'Santa takes the Street Glide',
   },
 ]
 

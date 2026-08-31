@@ -40,11 +40,16 @@ archive. Setting `signupUrl` swaps the "call the clubhouse" button for a
 Put the image files in `public/photos/`, then add entries to `gallery` with
 `src: '/photos/toy-run-2026.jpg'`. Every photo needs an `alt` (what is in the
 picture, for screen readers and for search) and a `caption` (what shows on
-hover). Resize to roughly 1600px on the long edge before uploading — phone
-photos are 5–8 MB each and will make the page crawl.
+hover). `year` is optional — leave it off and no year is shown, which beats
+showing a wrong one.
 
-The photos currently in `gallery` are **grayscale placeholders** loaded from
-picsum.photos. Replace all eight.
+Resize to roughly 1600px on the long edge before adding a photo. Straight off a
+phone they are 5–8 MB each and will make the page crawl. Re-saving also strips
+the EXIF block, which on a phone photo includes the GPS coordinates of wherever
+it was taken — worth doing on a public site.
+
+The eight photos in `gallery` now are the club's own. None of them have a
+`year` set yet.
 
 ### Adding a phone number later
 
@@ -67,8 +72,8 @@ else changes.
 ## Placeholder content to replace before launch
 
 Real and confirmed: the clubhouse address (**305 SW State Rte 7, Pleasant Hill,
-MO 64080**), the email (**mrt.phmo@gmail.com**), and the Facebook page.
-Everything below is still invented and needs the club's real details:
+MO 64080**), the email (**mrt.phmo@gmail.com**), the Facebook page, the officer
+roster, and the photos. Everything below is still invented:
 
 1. All four officers and their road names
 4. The four events in `events`
