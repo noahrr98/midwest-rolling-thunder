@@ -65,9 +65,9 @@ export const club = {
 
 /** The three numbers in the hero rail. Keep them honest and specific. */
 export const stats = [
-  { value: '$318,400', label: 'Raised since 2011' },
-  { value: '140', label: 'Patched members' },
-  { value: '41', label: 'Runs a year' },
+  { value: '$30,000', label: 'Raised since 2011' },
+  { value: '40', label: 'Patched members' },
+  { value: '15', label: 'Runs a year' },
 ]
 
 /** The scrolling band under the hero. Short phrases only. */
@@ -76,7 +76,7 @@ export const marquee = [
   'Every dollar stays local',
   'All makes welcome',
   'Since 2011',
-  'Kickstands up at nine',
+  'Serving the Community',
 ]
 
 export const about = {
@@ -87,7 +87,7 @@ export const about = {
   /** One sentence under the heading. */
   lead: 'The charity work is what the riding is for.',
   paragraphs: [
-    'Midwest Rolling Thunder started in a two-bay garage off Route 7 with nine riders and one rule: if a run does not help somebody, it is just a Sunday. Fifteen years later the rule has not changed, and neither has the garage — we just bought the building.',
+    'Midwest Rolling Thunder started in a two-bay garage off Route 7 with nine riders and one rule: if a run does not help somebody, it is just a Sunday. Fifteen years later the rule has not changed, and neither has the garage, we just bought the building.',
     'Members ride everything from a bagger to a twenty-year-old Bandit. There is no brand requirement, no probationary hazing, and no expectation that you show up to every run. Show up to the ones you can, and put in the work when you are there.',
     'We are not a one-percenter club and we do not pretend to be. We are a chartered, insured, family-friendly organization that runs an open clubhouse on Thursdays and answers to a treasurer who publishes the books twice a year.',
   ],
