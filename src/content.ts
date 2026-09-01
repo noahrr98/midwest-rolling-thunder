@@ -60,14 +60,14 @@ export const club = {
   headline: 'Loud pipes,\nfull pantries.',
   /** One paragraph under the headline. Say concretely what the club does. */
   subhead:
-    'We are a 140-member riding club that turns weekend runs into groceries, fuel cards, and heating bills for families across Cass and Johnson counties. Every dollar we raise stays inside a ninety-mile radius of the clubhouse.',
+    'We are a 40-member riding club that turns weekend runs into groceries, fuel cards, and heating bills for families across Cass and Johnson counties. Every dollar we raise stays in the community.',
 }
 
 /** The three numbers in the hero rail. Keep them honest and specific. */
 export const stats = [
   { value: '$30,000', label: 'Raised since 2011' },
   { value: '40', label: 'Patched members' },
-  { value: '15', label: 'Runs a year' },
+  { value: '5', label: 'Runs a year' },
 ]
 
 /** The scrolling band under the hero. Short phrases only. */
@@ -89,7 +89,7 @@ export const about = {
   paragraphs: [
     'Midwest Rolling Thunder started in a two-bay garage off Route 7 with nine riders and one rule: if a run does not help somebody, it is just a Sunday. Fifteen years later the rule has not changed, and neither has the garage, we just bought the building.',
     'Members ride everything from a bagger to a twenty-year-old Bandit. There is no brand requirement, no probationary hazing, and no expectation that you show up to every run. Show up to the ones you can, and put in the work when you are there.',
-    'We are not a one-percenter club and we do not pretend to be. We are a chartered, insured, family-friendly organization that runs an open clubhouse on Thursdays and answers to a treasurer who publishes the books twice a year.',
+    'We are not a one-percenter club and we do not pretend to be. We are a chartered, insured, family-friendly organization that loves helping out in our community.',
   ],
   /** The "what we do" list. Three to four items reads best. */
   pillars: [
@@ -124,16 +124,16 @@ export const officers: Officer[] = [
  * ------------------------------------------------------------------------- */
 export const events: Event[] = [
   {
-    id: 'harvest-run-2026',
-    title: 'Harvest Run for the Kellerman Family',
-    date: '2026-09-19',
-    time: 'Kickstands up 9:00 AM, riders meet at 8:15',
+    id: 'Boot drive',
+    title: 'Thanksgiving boot drive',
+    date: '2026-11-14',
+    time: '10:00 AM',
     location: 'Clubhouse lot, then south on Route 7',
     city: 'Pleasant Hill, MO',
     blurb:
-      'A 118-mile loop through Cass and Johnson counties ending at Whitmore Orchard. All proceeds go to the Kellerman family after the shop fire in June.',
-    tag: 'Benefit run',
-    cost: '$25 rider, $15 passenger',
+      'We are taking donations to help familys pay for groceries around the holidays.',
+    tag: 'Boot drive',
+    cost: 'Taking donations',
     signupUrl: '',
   },
   {
