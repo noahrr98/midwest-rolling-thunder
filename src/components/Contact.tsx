@@ -23,7 +23,7 @@ export function Contact() {
         <Reveal>
           <p className="eyebrow">04 — The clubhouse</p>
           <h2 className="display mt-5 max-w-[18ch] text-[clamp(2rem,5.5vw,3.25rem)]">
-            Doors open Thursday. <span className="text-steel-400">Walk in.</span>
+            Doors open Friday. <span className="text-steel-400">Walk in.</span>
           </h2>
         </Reveal>
 
@@ -80,17 +80,20 @@ export function Contact() {
                     {contact.phone}
                   </a>
                 )}
-                <a
-                  href={`mailto:${contact.email}`}
-                  className="group flex items-center gap-3 break-all text-lg text-bone-50 transition-colors hover:text-steel-300 sm:text-xl"
-                >
-                  <EnvelopeSimple
-                    size={18}
-                    weight="light"
-                    className="shrink-0 text-bone-600 transition-colors group-hover:text-steel-400"
-                  />
-                  {contact.email}
-                </a>
+                {contact.emails.map((address) => (
+                  <a
+                    key={address}
+                    href={`mailto:${address}`}
+                    className="group flex items-center gap-3 break-all text-lg text-bone-50 transition-colors hover:text-steel-300 sm:text-xl"
+                  >
+                    <EnvelopeSimple
+                      size={18}
+                      weight="light"
+                      className="shrink-0 text-bone-600 transition-colors group-hover:text-steel-400"
+                    />
+                    {address}
+                  </a>
+                ))}
               </div>
             </Reveal>
           </div>
