@@ -60,13 +60,13 @@ export const club = {
   headline: 'Loud pipes,\nfull pantries.',
   /** One paragraph under the headline. Say concretely what the club does. */
   subhead:
-    'We are a 40-member riding club that turns weekend runs into groceries, fuel cards, and heating bills for families across Cass and Johnson counties. Every dollar we raise stays in the community.',
+    'We are a over 40-member riding club that turns weekend runs into groceries, fuel cards, and heating bills for families across Cass and Johnson counties. Every dollar we raise stays in the community.',
 }
 
 /** The three numbers in the hero rail. Keep them honest and specific. */
 export const stats = [
-  { value: '$30,000', label: 'Raised since 2011' },
-  { value: '40', label: 'Patched members' },
+  { value: '$100,000', label: 'Over raised since 2011' },
+  { value: '40+', label: 'Patched members' },
   { value: '5', label: 'Runs a year' },
 ]
 
@@ -87,8 +87,8 @@ export const about = {
   /** One sentence under the heading. */
   lead: 'The charity work is what the riding is for.',
   paragraphs: [
-    'Midwest Rolling Thunder started in a two-bay garage off Route 7 with nine riders and one rule: if a run does not help somebody, it is just a Sunday. Fifteen years later the rule has not changed, and neither has the garage, we just bought the building.',
-    'Members ride everything from a bagger to a twenty-year-old Bandit. There is no brand requirement, no probationary hazing, and no expectation that you show up to every run. Show up to the ones you can, and put in the work when you are there.',
+    'Midwest Rolling Thunder started in a basement in odessa with four riders and one rule: if a run does not help somebody, it is just a Sunday. Fifteen years later the rule has not changed, we have just grown in to multiple chapters.',
+    'Members ride everything from a bagger to a twenty year old Bandit. There is no brand requirement, no probationary hazing, and no expectation that you show up to every run. Show up to the ones you can, and put in the work when you are there.',
     'We are not a one-percenter club and we do not pretend to be. We are a chartered, insured, family-friendly organization that loves helping out in our community.',
   ],
   /** The "what we do" list. Three to four items reads best. */
@@ -137,15 +137,15 @@ export const events: Event[] = [
     signupUrl: '',
   },
   {
-    id: 'thursday-open-house-oct',
-    title: 'Open clubhouse and new-member night',
-    date: '2026-10-08',
-    time: '6:30 PM until we lock up',
-    location: '305 SW State Rte 7',
-    city: 'Pleasant Hill, MO',
+    id: 'Kodiak memorial',
+    title: 'Memorial event',
+    date: '2026-09-26',
+    time: 'noon till 4:00',
+    location: 'mule skinners bar & grill',
+    city: 'Centerview, MO',
     blurb:
       'If you have been thinking about riding with us, this is the night to walk in. Bring the bike or do not. Coffee is on, the grill is going, and nobody will ask you to prospect.',
-    tag: 'Clubhouse',
+    tag: 'Mule Skinners',
     cost: 'Free',
   },
   {
@@ -237,7 +237,7 @@ export const contact = {
     mapQuery: '305 SW State Rte 7, Pleasant Hill, MO 64080',
   },
   hours: [
-    { day: 'Thursday', detail: '6:30 PM — open to the public' },
+    { day: 'Friday', detail: '6:30 PM — open to the public' },
     { day: 'Saturday', detail: '9:00 AM — members and guests' },
     { day: 'Run days', detail: 'Lot opens 90 minutes before roll out' },
   ],
@@ -246,7 +246,7 @@ export const contact = {
    * footer, and the "we could not send that" fallback all check for it.
    * Fill it in and they all come back.
    */
-  phone: '',
+  email: 'midwestrollingthunder1@gmail.com',
   email: 'mrt.phmo@gmail.com',
   /**
    * Where the contact form sends messages.
