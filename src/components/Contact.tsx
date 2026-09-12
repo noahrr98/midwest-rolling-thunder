@@ -23,7 +23,7 @@ export function Contact() {
         <Reveal>
           <p className="eyebrow">04 — The clubhouse</p>
           <h2 className="display mt-5 max-w-[18ch] text-[clamp(2rem,5.5vw,3.25rem)]">
-            Doors open Thursday. <span className="text-steel-400">Walk in.</span>
+            Doors open Friday. <span className="text-steel-400">Walk in.</span>
           </h2>
         </Reveal>
 
