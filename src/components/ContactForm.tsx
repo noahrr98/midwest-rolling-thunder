@@ -43,7 +43,7 @@ export function ContactForm() {
     // the form still works on a site with no server behind it.
     if (!contact.formEndpoint) {
       const body = `${fields.message}\n\n— ${fields.name} (${fields.email})`
-      window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(
+      window.location.href = `mailto:${contact.emails[0]}?subject=${encodeURIComponent(
         `${fields.reason} — ${fields.name}`,
       )}&body=${encodeURIComponent(body)}`
       setStatus('sent')
@@ -199,7 +199,7 @@ export function ContactForm() {
             <WarningCircle size={15} weight="bold" className="mt-px shrink-0" />
             That did not go through.{' '}
             {contact.phone ? `Call ${contact.phone} or email ` : 'Email '}
-            {contact.email} and we will pick it up.
+            {contact.emails.join(' or ')} and we will pick it up.
           </motion.p>
         )}
       </AnimatePresence>

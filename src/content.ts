@@ -246,8 +246,13 @@ export const contact = {
    * footer, and the "we could not send that" fallback all check for it.
    * Fill it in and they all come back.
    */
-  email: 'midwestrollingthunder1@gmail.com',
-  email: 'mrt.phmo@gmail.com',
+  phone: '',
+  /**
+   * Add a row per address and the clubhouse block and the footer both list it.
+   * The first row is the club's primary: it is the one the contact form mails
+   * when `formEndpoint` below is empty. Reorder the rows to change that.
+   */
+  emails: ['mrt.phmo@gmail.com', 'midwestrollingthunder1@gmail.com'],
   /**
    * Where the contact form sends messages.
    * Leave this as an empty string and the form falls back to opening the

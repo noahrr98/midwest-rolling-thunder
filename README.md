@@ -58,6 +58,13 @@ clubhouse block, the footer, and the form's failure message. Type a number into
 that one field and all three come back. Same for `contact.socials`: add a row
 and the link appears in the footer.
 
+### Email addresses
+
+`contact.emails` is a list, so the club can publish more than one. Every address
+in it is shown in the clubhouse block and in the footer. The **first** one is
+the primary: it is where the contact form sends mail while `formEndpoint` is
+empty, so reorder the list to change which inbox that is.
+
 ### The contact form
 
 Out of the box the form opens the visitor's own mail app with the message
@@ -72,7 +79,8 @@ else changes.
 ## Placeholder content to replace before launch
 
 Real and confirmed: the clubhouse address (**305 SW State Rte 7, Pleasant Hill,
-MO 64080**), the email (**mrt.phmo@gmail.com**), the Facebook page, the officer
+MO 64080**), the emails (**mrt.phmo@gmail.com** and
+**midwestrollingthunder1@gmail.com**), the Facebook page, the officer
 roster, and the photos. Everything below is still invented:
 
 1. All four officers and their road names

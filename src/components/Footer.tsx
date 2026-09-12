@@ -34,9 +34,15 @@ export function Footer() {
                 {s.label}
               </a>
             ))}
-            <a href={`mailto:${contact.email}`} className="text-sm text-bone-400 transition-colors hover:text-bone-50">
-              Email
-            </a>
+            {contact.emails.map((address) => (
+              <a
+                key={address}
+                href={`mailto:${address}`}
+                className="text-sm text-bone-400 transition-colors hover:text-bone-50"
+              >
+                {address}
+              </a>
+            ))}
             {contact.phone && (
               <a
                 href={`tel:${contact.phone.replace(/[^\d+]/g, '')}`}
