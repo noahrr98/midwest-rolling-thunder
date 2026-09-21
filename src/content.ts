@@ -138,14 +138,14 @@ export const events: Event[] = [
   },
   {
     id: 'Kodiak memorial',
-    title: 'Memorial event',
+    title: 'Memorial for Kodiak',
     date: '2026-09-26',
     time: 'noon till 4:00',
     location: 'mule skinners bar & grill',
     city: 'Centerview, MO',
     blurb:
       'An afternoon at Mule Skinners to remember Kodiak. Family, friends, and anyone who shared the road are welcome — no patch required. Come as you are and stay as long as you like.',
-    tag: 'Mule Skinners',
+    tag: 'Memorial',
     cost: 'Free',
   },
 ]
