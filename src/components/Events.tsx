@@ -22,11 +22,22 @@ function EventRow({ event, isNext }: { event: Event; isNext: boolean }) {
         className="grid w-full grid-cols-[auto_1fr_auto] items-start gap-4 py-7 text-left transition-colors duration-300 sm:gap-8 sm:py-9"
       >
         <span className="w-14 shrink-0 sm:w-20">
-          <span className="block font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-steel-400">
-            {monthShort(event.date)}
-          </span>
-          <span className="display mt-1 block text-3xl text-bone-50 sm:text-5xl">{dayOfMonth(event.date)}</span>
-          <span className="mt-1 block font-mono text-[0.625rem] text-bone-600">{year(event.date)}</span>
+          {event.date ? (
+            <>
+              <span className="block font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-steel-400">
+                {monthShort(event.date)}
+              </span>
+              <span className="display mt-1 block text-3xl text-bone-50 sm:text-5xl">{dayOfMonth(event.date)}</span>
+              <span className="mt-1 block font-mono text-[0.625rem] text-bone-600">{year(event.date)}</span>
+            </>
+          ) : (
+            <>
+              <span className="block font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-steel-400">
+                Date
+              </span>
+              <span className="display mt-1 block text-3xl text-bone-400 sm:text-5xl">TBA</span>
+            </>
+          )}
         </span>
 
         <span className="min-w-0">
@@ -34,10 +45,15 @@ function EventRow({ event, isNext }: { event: Event; isNext: boolean }) {
             <span className="rounded-full border border-bone-600/40 px-2.5 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-bone-400">
               {event.tag}
             </span>
-            {isNext && (
+            {isNext && event.date && (
               <span className="inline-flex items-center gap-1.5 rounded-full bg-steel-500/15 px-2.5 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-steel-300">
                 <span className="size-1.5 rounded-full bg-steel-400 breathe" />
                 {countdown(event.date)}
+              </span>
+            )}
+            {!event.date && (
+              <span className="rounded-full bg-bone-50/5 px-2.5 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-bone-400">
+                Being rescheduled
               </span>
             )}
           </span>
@@ -83,7 +99,9 @@ function EventRow({ event, isNext }: { event: Event; isNext: boolean }) {
                 <dl className="rule mt-6 grid grid-cols-2 gap-6 pt-5 sm:max-w-md">
                   <div>
                     <dt className="font-mono text-[0.625rem] uppercase tracking-wider text-bone-600">Date</dt>
-                    <dd className="mt-1.5 text-sm text-bone-200">{longRange(event.date, event.endDate)}</dd>
+                    <dd className="mt-1.5 text-sm text-bone-200">
+                      {event.date ? longRange(event.date, event.endDate) : 'To be announced — check back or follow the Facebook page'}
+                    </dd>
                   </div>
                   <div>
                     <dt className="font-mono text-[0.625rem] uppercase tracking-wider text-bone-600">Cost</dt>
@@ -157,10 +175,12 @@ export function Events() {
 
   const { upcoming, past } = useMemo(() => {
     const today = startOfToday().getTime()
-    const sorted = [...events].sort((a, b) => parseDay(a.date).getTime() - parseDay(b.date).getTime())
+    const ends = (e: Event) => parseDay(e.endDate ?? e.date!).getTime()
+    const dated = events.filter((e) => e.date).sort((a, b) => parseDay(a.date!).getTime() - parseDay(b.date!).getTime())
+    const undated = events.filter((e) => !e.date)
     return {
-      upcoming: sorted.filter((e) => parseDay(e.endDate ?? e.date).getTime() >= today),
-      past: sorted.filter((e) => parseDay(e.endDate ?? e.date).getTime() < today).reverse(),
+      upcoming: [...dated.filter((e) => ends(e) >= today), ...undated],
+      past: dated.filter((e) => ends(e) < today).reverse(),
     }
   }, [])
 

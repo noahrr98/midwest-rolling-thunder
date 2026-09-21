@@ -13,8 +13,12 @@ export type Event = {
   /** Any unique string. Used as a React key and as the deep link (#ride-<id>). */
   id: string
   title: string
-  /** YYYY-MM-DD. Rides move from "Upcoming" to "Past" automatically at midnight. */
-  date: string
+  /**
+   * YYYY-MM-DD. Rides move from "Upcoming" to "Past" automatically at midnight.
+   * Leave it out while a date is still being set: the event shows as
+   * "Date TBA" at the bottom of Upcoming and never drops into Past.
+   */
+  date?: string
   /** Optional second day for weekend runs. YYYY-MM-DD. */
   endDate?: string
   /** Free text — "Kickstands up 9:00 AM" reads better than a bare time. */
@@ -126,12 +130,12 @@ export const events: Event[] = [
   {
     id: 'Boot drive',
     title: 'Thanksgiving boot drive',
-    date: '2026-11-14',
+    // Being rescheduled — add `date: 'YYYY-MM-DD',` here once it is set.
     time: '10:00 AM',
     location: 'Clubhouse lot, then south on Route 7',
     city: 'Pleasant Hill, MO',
     blurb:
-      'We are taking donations to help familys pay for groceries around the holidays.',
+      'We are taking donations to help families pay for groceries around the holidays.',
     tag: 'Boot drive',
     cost: 'Taking donations',
     signupUrl: '',

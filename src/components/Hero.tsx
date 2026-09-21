@@ -9,8 +9,8 @@ function nextRide() {
   const today = startOfToday().getTime()
   return (
     events
-      .filter((e) => parseDay(e.endDate ?? e.date).getTime() >= today)
-      .sort((a, b) => parseDay(a.date).getTime() - parseDay(b.date).getTime())[0] ?? null
+      .filter((e) => e.date && parseDay(e.endDate ?? e.date).getTime() >= today)
+      .sort((a, b) => parseDay(a.date!).getTime() - parseDay(b.date!).getTime())[0] ?? null
   )
 }
 
@@ -151,7 +151,7 @@ export function Hero() {
                   <span className="absolute size-2 rounded-full bg-steel-400 breathe" />
                   <span className="size-2 rounded-full bg-steel-400" />
                 </span>
-                <span className="eyebrow">Next ride — {countdown(next.date)}</span>
+                <span className="eyebrow">Next ride — {countdown(next.date!)}</span>
               </div>
               <p className="display mt-3 text-lg leading-tight text-bone-50 transition-colors group-hover:text-steel-300">
                 {next.title}
@@ -159,7 +159,7 @@ export function Hero() {
               <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 font-mono text-xs text-bone-400">
                 <span className="inline-flex items-center gap-1.5">
                   <CalendarBlank size={14} weight="bold" className="text-steel-400" />
-                  {longRange(next.date, next.endDate)}
+                  {longRange(next.date!, next.endDate)}
                 </span>
                 <span className="inline-flex items-center gap-1.5">
                   <MapPin size={14} weight="bold" className="text-steel-400" />

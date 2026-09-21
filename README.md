@@ -32,7 +32,11 @@ else has to be touched.
 Copy an existing block in `events` and change the values. Dates are
 `YYYY-MM-DD`. A ride moves from **Upcoming** to **Past** by itself the day
 after it happens, so old rides do not need to be deleted — they become the
-archive. Setting `signupUrl` swaps the "call the clubhouse" button for a
+archive.
+
+If a date isn't settled yet, leave the `date` line out entirely. The event
+then shows at the bottom of Upcoming as "Date TBA" with a "being rescheduled"
+badge, and never drops into Past. Add the `date` line back when it's set. Setting `signupUrl` swaps the "call the clubhouse" button for a
 "sign up" button pointing at that link.
 
 ### Adding photos
