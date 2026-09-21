@@ -148,6 +148,19 @@ export const events: Event[] = [
     tag: 'Memorial',
     cost: 'Free',
   },
+  {
+    id: 'chili-cookoff-2026',
+    title: 'Chili Cook-Off',
+    date: '2026-11-14',
+    time: '12:00 PM to 3:00 PM',
+    location: 'American Legion Post 499, 499 SW State Route 7',
+    city: 'Blue Springs, MO',
+    blurb:
+      'A chili cook-off to raise money for the Blue Springs South High School JROTC program, with a silent auction and a 50-50 raffle. Three categories: spicy, mild, and white. $20 to enter a chili, $5 to taste and vote. Text (816) 328-6040 to register a pot.',
+    tag: 'Cook-off',
+    cost: '$20 to enter, $5 to eat',
+    signupUrl: 'sms:+18163286040',
+  },
 ]
 
 /* ---------------------------------------------------------------------------

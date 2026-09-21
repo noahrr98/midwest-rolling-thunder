@@ -100,7 +100,7 @@ function EventRow({ event, isNext }: { event: Event; isNext: boolean }) {
                     rel="noreferrer"
                     className="mt-7 inline-flex items-center gap-2 rounded-full bg-bone-50 px-6 py-3 text-sm font-semibold text-ink-950 transition-all duration-300 hover:bg-steel-300 active:-translate-y-px"
                   >
-                    Sign up for this ride
+                    Sign up
                     <ArrowUpRight size={15} weight="bold" />
                   </a>
                 ) : (
