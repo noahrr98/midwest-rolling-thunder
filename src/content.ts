@@ -148,32 +148,6 @@ export const events: Event[] = [
     tag: 'Mule Skinners',
     cost: 'Free',
   },
-  {
-    id: 'pantry-drive-2026',
-    title: 'Autumn pantry drive and chili cookoff',
-    date: '2026-10-24',
-    endDate: '2026-10-25',
-    time: 'Drop-off 10:00 AM to 4:00 PM both days',
-    location: 'Clubhouse lot',
-    city: 'Pleasant Hill, MO',
-    blurb:
-      'Two days of collection for the Marie Wilkins Food Pantry and Cass County Neighbors. Last year we filled four box trucks. Bring shelf-stable goods, diapers, or a cash donation.',
-    tag: 'Drive',
-    cost: 'Bring a bag',
-  },
-  {
-    id: 'toy-run-2026',
-    title: '15th Annual Toy Run',
-    date: '2026-12-06',
-    time: 'Staging 10:00 AM, roll out 11:00 AM sharp',
-    location: 'City Park, east lot',
-    city: 'Pleasant Hill, MO',
-    blurb:
-      'The big one. Police escort up Route 7 to the Boys and Girls Club. One unwrapped toy per rider gets you in. Cages welcome at the back of the pack.',
-    tag: 'Toy run',
-    cost: 'One unwrapped toy',
-    signupUrl: '',
-  },
 ]
 
 /* ---------------------------------------------------------------------------
