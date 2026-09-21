@@ -126,7 +126,7 @@ function EventRow({ event, isNext }: { event: Event; isNext: boolean }) {
                     href="#contact"
                     className="mt-7 inline-flex items-center gap-2 rounded-full border border-bone-600/40 px-6 py-3 text-sm font-semibold text-bone-200 transition-all duration-300 hover:border-bone-400 hover:text-bone-50 active:-translate-y-px"
                   >
-                    Ask about this ride
+                    Ask about this event
                     <ArrowUpRight size={15} weight="bold" />
                   </a>
                 )}

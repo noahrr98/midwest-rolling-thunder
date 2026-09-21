@@ -165,6 +165,18 @@ export const events: Event[] = [
     cost: '$20 to enter, $5 to eat',
     signupUrl: 'sms:+18163286040',
   },
+  {
+    id: 'election-meeting-2026',
+    title: 'Mandatory election meeting',
+    date: '2026-10-10',
+    time: '2:00 PM',
+    location: 'Clubhouse',
+    city: 'Pleasant Hill, MO',
+    blurb:
+      'All members are expected to attend. We will be voting on president, vice president, master at arms, sergeant at arms, lead road captain, second road captain, secretary, and treasurer. Nominations should be made this week in the group chat.',
+    tag: 'Members',
+    cost: 'Members only',
+  },
 ]
 
 /* ---------------------------------------------------------------------------
