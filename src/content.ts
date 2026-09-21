@@ -144,7 +144,7 @@ export const events: Event[] = [
     location: 'mule skinners bar & grill',
     city: 'Centerview, MO',
     blurb:
-      'If you have been thinking about riding with us, this is the night to walk in. Bring the bike or do not. Coffee is on, the grill is going, and nobody will ask you to prospect.',
+      'An afternoon at Mule Skinners to remember Kodiak. Family, friends, and anyone who shared the road are welcome — no patch required. Come as you are and stay as long as you like.',
     tag: 'Mule Skinners',
     cost: 'Free',
   },
