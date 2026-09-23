@@ -166,6 +166,18 @@ export const events: Event[] = [
     signupUrl: 'sms:+18163286040',
   },
   {
+    id: 'brick-memorial-ride-2026',
+    title: '1st Annual Brick Memorial Ride',
+    date: '2026-10-10',
+    time: 'Meet 11:00 AM, kickstands up at noon',
+    location: 'Buckets',
+    city: 'Blue Springs, MO',
+    blurb:
+      'Chasing wind, cruising horizons. Meet at Buckets in Blue Springs at 11:00 AM and roll out at noon for the ride to Fugleys in East Lynne. All bike types are welcome — come celebrate the life that was Brick.',
+    tag: 'Memorial',
+    cost: 'Free',
+  },
+  {
     id: 'election-meeting-2026',
     title: 'Mandatory election meeting',
     date: '2026-10-10',
