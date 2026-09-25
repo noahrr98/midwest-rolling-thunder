@@ -10,7 +10,12 @@
  * ------------------------------------------------------------------------- */
 
 export type Event = {
-  /** Any unique string. Used as a React key and as the deep link (#ride-<id>). */
+  /**
+   * Any unique string. Used as a React key, as the deep link (#ride-<id>), and
+   * by subscribers' calendars to recognise the event. Never change it once the
+   * event is posted: a new id looks like a brand-new event, and the old one
+   * vanishes, so anyone who already had it gets a duplicate-then-delete.
+   */
   id: string
   title: string
   /**
@@ -21,7 +26,12 @@ export type Event = {
   date?: string
   /** Optional second day for weekend runs. YYYY-MM-DD. */
   endDate?: string
-  /** Free text — "Kickstands up 9:00 AM" reads better than a bare time. */
+  /**
+   * Free text — "Kickstands up 9:00 AM" reads better than a bare time. The
+   * calendar feed takes the first clock time here as the start, and a second
+   * one joined by "to" / "till" / a dash as the end ("noon till 4:00"). With
+   * no clock time at all ("All day"), the event goes on calendars as all-day.
+   */
   time: string
   /** Where riders meet. */
   location: string
