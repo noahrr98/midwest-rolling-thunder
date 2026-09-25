@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { ArrowUpRight, CaretDown, Clock, MapPin, Ticket } from '@phosphor-icons/react'
+import { AppleLogo, ArrowUpRight, CalendarPlus, CaretDown, Check, Clock, GoogleLogo, LinkSimple, MapPin, Ticket } from '@phosphor-icons/react'
 import { Reveal } from './Reveal'
 import { events } from '../content'
 import type { Event } from '../content'
 import { countdown, dayOfMonth, longRange, monthShort, parseDay, startOfToday, year } from '../lib/date'
+import { CALENDAR_PATH } from '../lib/ics'
 
 type Scope = 'upcoming' | 'past'
 
@@ -170,6 +171,58 @@ function EmptyRides({ scope }: { scope: Scope }) {
   )
 }
 
+/** Subscribe once and every ride — plus every later change to one — lands on the member's own calendar. */
+function Subscribe() {
+  const [copied, setCopied] = useState(false)
+  const feed = `${window.location.host}${CALENDAR_PATH}`
+  const button =
+    'inline-flex items-center gap-2 rounded-full border border-bone-600/40 px-5 py-2.5 text-sm font-semibold text-bone-200 transition-all duration-300 hover:border-bone-400 hover:text-bone-50 active:-translate-y-px'
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(`${window.location.protocol}//${feed}`)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2500)
+    } catch {
+      window.prompt('Copy this calendar link:', `${window.location.protocol}//${feed}`)
+    }
+  }
+
+  return (
+    <div className="mt-14 flex flex-col gap-6 rounded-3xl border border-bone-50/8 bg-ink-900/60 p-6 sm:mt-16 sm:p-8 lg:flex-row lg:items-center lg:justify-between">
+      <div className="flex items-start gap-4">
+        <CalendarPlus size={22} weight="light" className="mt-1 shrink-0 text-steel-400" />
+        <div>
+          <h3 className="display text-xl text-bone-50 sm:text-2xl">Put every ride on your phone</h3>
+          <p className="mt-2 max-w-[56ch] text-sm leading-relaxed text-bone-400">
+            Subscribe once. New rides show up in your calendar on their own, and when a date, time, or place changes, your
+            calendar changes with it.
+          </p>
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-2.5 lg:shrink-0">
+        <a href={`webcal://${feed}`} className={button}>
+          <AppleLogo size={15} weight="fill" />
+          iPhone &amp; Mac
+        </a>
+        <a
+          href={`https://calendar.google.com/calendar/render?cid=${encodeURIComponent(`webcal://${feed}`)}`}
+          target="_blank"
+          rel="noreferrer"
+          className={button}
+        >
+          <GoogleLogo size={15} weight="bold" />
+          Google Calendar
+        </a>
+        <button type="button" onClick={copy} className={button}>
+          {copied ? <Check size={15} weight="bold" /> : <LinkSimple size={15} weight="bold" />}
+          {copied ? 'Link copied' : 'Copy link'}
+        </button>
+      </div>
+    </div>
+  )
+}
+
 export function Events() {
   const [scope, setScope] = useState<Scope>('upcoming')
 
@@ -239,6 +292,10 @@ export function Events() {
           </ul>
         )}
       </div>
+
+      <Reveal>
+        <Subscribe />
+      </Reveal>
     </section>
   )
 }

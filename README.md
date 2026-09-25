@@ -27,6 +27,9 @@ else has to be touched.
 | Past-event photos | `gallery` |
 | Clubhouse address, hours, phone, email | `contact` |
 
+The ride calendar feed (below) is built from `events`, so it never needs
+editing separately.
+
 ### Adding a ride
 
 Copy an existing block in `events` and change the values. Dates are
@@ -38,6 +41,43 @@ If a date isn't settled yet, leave the `date` line out entirely. The event
 then shows at the bottom of Upcoming as "Date TBA" with a "being rescheduled"
 badge, and never drops into Past. Add the `date` line back when it's set. Setting `signupUrl` swaps the "call the clubhouse" button for a
 "sign up" button pointing at that link.
+
+Once a ride is posted, don't change its `id`. Members' calendars use it to
+recognise the ride, so a new `id` makes it look like a different event.
+
+### The calendar feed
+
+Every build also writes **`/events.ics`**, a calendar feed of every dated event.
+The "Put every ride on your phone" card at the bottom of the calendar section
+links to it. A member subscribes once, and from then on:
+
+- a new ride appears in their calendar app by itself
+- a changed date, time, place, or description updates the entry they already have
+- a deleted ride disappears, and so does one whose `date` is taken out while it is
+  being rescheduled. It comes back when the date goes back in.
+
+Nothing extra to do when editing: push the change to `content.ts` and the feed
+is rebuilt along with the rest of the site. Subscribers' apps check for
+changes on their own schedule: Apple Calendar and Outlook about every few
+hours, Google Calendar anywhere up to a day. Changes are not instant, and the
+calendar apps update quietly without a notification.
+
+Times come from the free-text `time` field. The first clock time is the
+start. A second one joined by "to", "till", or a dash is the end; otherwise
+the entry is two hours long. The exact wording of `time` is also copied into
+the event notes, so "kickstands up at noon" isn't lost. An event whose `time`
+has no clock time in it ("All day") goes on calendars as all-day, and the build
+prints a warning naming it. So do multi-day runs with an `endDate`. All times are
+read as Central.
+
+Subscribing:
+
+- **iPhone / Mac** — tap "iPhone & Mac" and confirm. It opens Calendar directly.
+- **Google Calendar** — the button opens Google Calendar on the web and asks to
+  add the calendar. On an Android phone, if it opens the app instead of the add
+  screen, do it once from a computer; it then syncs to the phone.
+- **Anything else (Outlook, etc.)** — "Copy link" and paste it into the app's
+  "subscribe to calendar from the internet" option.
 
 ### Adding photos
 
