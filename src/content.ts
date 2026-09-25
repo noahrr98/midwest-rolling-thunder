@@ -179,7 +179,7 @@ export const events: Event[] = [
     id: 'election-meeting-2026',
     title: 'Mandatory election meeting',
     date: '2026-10-10',
-    time: '10:00 AM',
+    time: '10:00 AM to 11:00 AM',
     location: 'Buckets',
     city: 'Blue Springs, MO',
     blurb:
