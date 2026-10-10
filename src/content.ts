@@ -126,7 +126,7 @@ export const officers: Officer[] = [
   { name: 'Tyler', roadName: 'Swamp', role: 'President' },
   { name: 'Noah', roadName: 'Hollywood', role: 'Vice President' },
   { name: 'Chris', roadName: 'Birdman', role: 'Master at Arms' },
-  { name: 'Jeremy', roadName: 'Cajun', role: 'Sargent at Arms' },
+  { name: 'Jeremy', roadName: 'Cajun', role: 'Sergeant at Arms' },
   { name: 'Chris', roadName: 'Autograph', role: 'Road Captain' },
   { name: 'Katie', roadName: 'Chong', role: 'Treasurer' },
   { name: 'Niki', roadName: 'Flipflop', role: 'Secretary' },
@@ -141,7 +141,7 @@ export const events: Event[] = [
   {
     id: 'Boot drive',
     title: 'Thanksgiving boot drive',
-    // Being rescheduled — add `date: 'YYYY-MM-DD',` here once it is set.
+    date: '2026-11-07',
     time: '10:00 AM',
     location: 'Clubhouse lot, then south on Route 7',
     city: 'Pleasant Hill, MO',
@@ -210,6 +210,12 @@ export const events: Event[] = [
  * the page crawl. Order here is the order on the wall.
  * ------------------------------------------------------------------------- */
 export const gallery: Photo[] = [
+  {
+    src: '/photos/brick-memorial-site.jpg',
+    alt: "Club members and family gathered on the grass at Brick's memorial site, some sitting together in the middle while riders in MRT vests stand around them",
+    caption: "Visiting Brick's memorial site",
+    year: '2026',
+  },
   {
     src: '/photos/staging-lot.jpg',
     alt: 'A long row of motorcycles parked at an event lot, a custom orange Softail closest to the camera',
