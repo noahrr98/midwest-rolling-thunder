@@ -211,6 +211,12 @@ export const events: Event[] = [
  * ------------------------------------------------------------------------- */
 export const gallery: Photo[] = [
   {
+    src: '/photos/brick-memorial-site.jpg',
+    alt: "Club members and family gathered on the grass at Brick's memorial site, some sitting together in the middle while riders in MRT vests stand around them",
+    caption: "Visiting Brick's memorial site",
+    year: '2026',
+  },
+  {
     src: '/photos/staging-lot.jpg',
     alt: 'A long row of motorcycles parked at an event lot, a custom orange Softail closest to the camera',
     caption: 'Staged up before the run',
