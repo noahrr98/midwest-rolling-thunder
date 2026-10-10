@@ -126,7 +126,7 @@ export const officers: Officer[] = [
   { name: 'Tyler', roadName: 'Swamp', role: 'President' },
   { name: 'Noah', roadName: 'Hollywood', role: 'Vice President' },
   { name: 'Chris', roadName: 'Birdman', role: 'Master at Arms' },
-  { name: 'Jeremy', roadName: 'Cajun', role: 'Sargent at Arms' },
+  { name: 'Jeremy', roadName: 'Cajun', role: 'Sergeant at Arms' },
   { name: 'Chris', roadName: 'Autograph', role: 'Road Captain' },
   { name: 'Katie', roadName: 'Chong', role: 'Treasurer' },
   { name: 'Niki', roadName: 'Flipflop', role: 'Secretary' },
