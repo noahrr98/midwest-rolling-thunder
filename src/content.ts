@@ -141,7 +141,7 @@ export const events: Event[] = [
   {
     id: 'Boot drive',
     title: 'Thanksgiving boot drive',
-    // Being rescheduled — add `date: 'YYYY-MM-DD',` here once it is set.
+    date: '2026-11-07',
     time: '10:00 AM',
     location: 'Clubhouse lot, then south on Route 7',
     city: 'Pleasant Hill, MO',

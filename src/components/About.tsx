@@ -15,7 +15,7 @@ export function About() {
 
           <Reveal delay={0.1}>
             <div className="rule mt-10 hidden pt-8 lg:block">
-              <p className="eyebrow mb-5">The board</p>
+              <p className="eyebrow mb-5">The officers</p>
               <ul className="divide-y divide-bone-600/20">
                 {officers.map((o) => (
                   <li key={o.role} className="flex items-baseline justify-between gap-4 py-3">
@@ -70,10 +70,10 @@ export function About() {
             </ol>
           </div>
 
-          {/* Board list moves inline below the ledger on narrow screens. */}
+          {/* Officers list moves inline below the ledger on narrow screens. */}
           <Reveal>
             <div className="rule mt-14 pt-8 lg:hidden">
-              <p className="eyebrow mb-5">The board</p>
+              <p className="eyebrow mb-5">The officers</p>
               <ul className="divide-y divide-bone-600/20">
                 {officers.map((o) => (
                   <li key={o.role} className="flex flex-wrap items-baseline justify-between gap-2 py-3">
