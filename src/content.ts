@@ -123,12 +123,13 @@ export const about = {
 }
 
 export const officers: Officer[] = [
-  { name: 'Danny', roadName: 'Crash', role: 'President' },
-  { name: 'Tyler', roadName: 'Swamp', role: 'Vice President' },
+  { name: 'Tyler', roadName: 'Swamp', role: 'President' },
+  { name: 'Noah', roadName: 'Hollywood', role: 'Vice President' },
   { name: 'Chris', roadName: 'Birdman', role: 'Master at Arms' },
   { name: 'Jeremy', roadName: 'Cajun', role: 'Sargent at Arms' },
+  { name: 'Chris', roadName: 'Autograph', role: 'Road Captain' },
   { name: 'Katie', roadName: 'Chong', role: 'Treasurer' },
-  { name: 'Nate', roadName: 'Mator', role: 'Road Captain' },
+  { name: 'Niki', roadName: 'Flipflop', role: 'Secretary' },
 ]
 
 /* ---------------------------------------------------------------------------

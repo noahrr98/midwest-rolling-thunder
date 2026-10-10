@@ -18,7 +18,7 @@ export function About() {
               <p className="eyebrow mb-5">The board</p>
               <ul className="divide-y divide-bone-600/20">
                 {officers.map((o) => (
-                  <li key={o.name} className="flex items-baseline justify-between gap-4 py-3">
+                  <li key={o.role} className="flex items-baseline justify-between gap-4 py-3">
                     <span className="text-sm text-bone-200">
                       {o.name}
                       <span className="text-bone-600"> — “{o.roadName}”</span>
@@ -76,7 +76,7 @@ export function About() {
               <p className="eyebrow mb-5">The board</p>
               <ul className="divide-y divide-bone-600/20">
                 {officers.map((o) => (
-                  <li key={o.name} className="flex flex-wrap items-baseline justify-between gap-2 py-3">
+                  <li key={o.role} className="flex flex-wrap items-baseline justify-between gap-2 py-3">
                     <span className="text-sm text-bone-200">
                       {o.name}
                       <span className="text-bone-600"> — “{o.roadName}”</span>
