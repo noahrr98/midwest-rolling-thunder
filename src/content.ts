@@ -290,7 +290,7 @@ export const contact = {
    * the clubhouse block and to every ride that costs something. Leave it empty
    * and both disappear.
    */
-  venmo: 'MTR-PHMO',
+  venmo: 'MRT-PHMO',
   /**
    * Where the contact form sends messages.
    * Leave this as an empty string and the form falls back to opening the
