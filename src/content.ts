@@ -286,6 +286,12 @@ export const contact = {
    */
   emails: ['mrt.phmo@gmail.com', 'midwestrollingthunder1@gmail.com'],
   /**
+   * The club's Venmo username, without the @. Adds a "Pay with Venmo" link to
+   * the clubhouse block and to every ride that costs something. Leave it empty
+   * and both disappear.
+   */
+  venmo: 'MTR-PHMO',
+  /**
    * Where the contact form sends messages.
    * Leave this as an empty string and the form falls back to opening the
    * visitor's mail app with everything filled in — which works with no server.

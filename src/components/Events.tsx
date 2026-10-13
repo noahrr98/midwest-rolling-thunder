@@ -2,14 +2,14 @@ import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { AppleLogo, ArrowUpRight, CalendarPlus, CaretDown, Check, Clock, GoogleLogo, LinkSimple, MapPin, Ticket } from '@phosphor-icons/react'
 import { Reveal } from './Reveal'
-import { events } from '../content'
+import { contact, events } from '../content'
 import type { Event } from '../content'
 import { countdown, dayOfMonth, longRange, monthShort, parseDay, startOfToday, year } from '../lib/date'
 import { CALENDAR_PATH } from '../lib/ics'
 
 type Scope = 'upcoming' | 'past'
 
-function EventRow({ event, isNext }: { event: Event; isNext: boolean }) {
+function EventRow({ event, isNext, isPast }: { event: Event; isNext: boolean; isPast: boolean }) {
   const [open, setOpen] = useState(false)
   const panelId = `ride-panel-${event.id}`
 
@@ -128,6 +128,17 @@ function EventRow({ event, isNext }: { event: Event; isNext: boolean }) {
                     className="mt-7 inline-flex items-center gap-2 rounded-full border border-bone-600/40 px-6 py-3 text-sm font-semibold text-bone-200 transition-all duration-300 hover:border-bone-400 hover:text-bone-50 active:-translate-y-px"
                   >
                     Ask about this event
+                    <ArrowUpRight size={15} weight="bold" />
+                  </a>
+                )}
+                {contact.venmo && !isPast && /\$|donat/i.test(event.cost) && (
+                  <a
+                    href={`https://venmo.com/u/${contact.venmo}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-7 ml-3 inline-flex items-center gap-2 rounded-full border border-steel-400/50 px-6 py-3 text-sm font-semibold text-steel-300 transition-all duration-300 hover:border-steel-300 hover:text-bone-50 active:-translate-y-px"
+                  >
+                    Pay with Venmo
                     <ArrowUpRight size={15} weight="bold" />
                   </a>
                 )}
@@ -286,7 +297,7 @@ export function Events() {
           <ul className="divide-y divide-bone-600/20 border-t border-bone-600/30">
             {list.map((event, i) => (
               <Reveal key={event.id} delay={Math.min(i, 4) * 0.05}>
-                <EventRow event={event} isNext={scope === 'upcoming' && i === 0} />
+                <EventRow event={event} isNext={scope === 'upcoming' && i === 0} isPast={scope === 'past'} />
               </Reveal>
             ))}
           </ul>

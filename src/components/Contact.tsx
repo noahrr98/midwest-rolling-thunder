@@ -1,4 +1,4 @@
-import { ArrowUpRight, EnvelopeSimple, MapPin, Phone } from '@phosphor-icons/react'
+import { ArrowUpRight, CurrencyDollar, EnvelopeSimple, MapPin, Phone } from '@phosphor-icons/react'
 import { Reveal } from './Reveal'
 import { ContactForm } from './ContactForm'
 import { contact } from '../content'
@@ -94,6 +94,21 @@ export function Contact() {
                     {address}
                   </a>
                 ))}
+                {contact.venmo && (
+                  <a
+                    href={`https://venmo.com/u/${contact.venmo}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex items-center gap-3 text-lg text-bone-50 transition-colors hover:text-steel-300 sm:text-xl"
+                  >
+                    <CurrencyDollar
+                      size={18}
+                      weight="light"
+                      className="shrink-0 text-bone-600 transition-colors group-hover:text-steel-400"
+                    />
+                    Venmo @{contact.venmo}
+                  </a>
+                )}
               </div>
             </Reveal>
           </div>
