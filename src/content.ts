@@ -143,10 +143,10 @@ export const events: Event[] = [
     title: 'Thanksgiving boot drive',
     date: '2026-11-07',
     time: '10:00 AM',
-    location: 'Clubhouse lot, then south on Route 7',
+    location: 'Route 7 and Myrtle — park at 301 RT-7',
     city: 'Pleasant Hill, MO',
     blurb:
-      'We are taking donations to help families pay for groceries around the holidays.',
+      'We are taking donations to help families pay for groceries around the holidays. The boot drive is at the corner of Route 7 and Myrtle. Park at 301 RT-7, Pleasant Hill. Where we meet beforehand is still being confirmed. Check back here or on the Facebook page.',
     tag: 'Boot drive',
     cost: 'Taking donations',
     signupUrl: '',
