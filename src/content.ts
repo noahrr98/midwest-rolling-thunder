@@ -177,6 +177,18 @@ export const events: Event[] = [
     signupUrl: 'sms:+18163286040',
   },
   {
+    id: 'monthly-meeting-2026-11',
+    title: 'Monthly meeting',
+    date: '2026-11-14',
+    time: '3:15 PM',
+    location: 'American Legion Post 499, 499 SW State Route 7',
+    city: 'Blue Springs, MO',
+    blurb:
+      'Our November monthly meeting, at the American Legion right after the chili cook-off.',
+    tag: 'Members',
+    cost: 'Members only',
+  },
+  {
     id: 'election-meeting-2026',
     title: 'Mandatory election meeting',
     date: '2026-10-10',
