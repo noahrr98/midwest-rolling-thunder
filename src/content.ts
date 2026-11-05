@@ -142,7 +142,7 @@ export const events: Event[] = [
     id: 'Boot drive',
     title: 'Thanksgiving boot drive',
     date: '2026-11-07',
-    time: 'Meet 9:30 AM',
+    time: '9:30 AM to 2:00 PM',
     location: '301 RT-7 (Route 7 and Myrtle)',
     city: 'Pleasant Hill, MO',
     blurb:
