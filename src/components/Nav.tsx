@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'motion/react'
-import { List, X } from '@phosphor-icons/react'
+import { Heart, List, X } from '@phosphor-icons/react'
 import { Logo } from './Logo'
-import { club } from '../content'
+import { club, contact } from '../content'
+
+const VENMO = contact.venmo ? `https://venmo.com/u/${contact.venmo}` : ''
 
 const LINKS = [
   { href: '#about', label: 'Who we are' },
@@ -45,6 +47,17 @@ export function Nav() {
                 {l.label}
               </a>
             ))}
+            {VENMO && (
+              <a
+                href={VENMO}
+                target="_blank"
+                rel="noreferrer"
+                className="ml-2 inline-flex items-center gap-2 rounded-full bg-steel-400 px-5 py-2.5 text-sm font-semibold text-ink-950 transition-all duration-300 hover:bg-steel-300 active:-translate-y-px"
+              >
+                <Heart size={15} weight="fill" />
+                Donate
+              </a>
+            )}
             <a
               href="#contact"
               className="ml-2 rounded-full bg-bone-50 px-5 py-2.5 text-sm font-semibold text-ink-950 transition-all duration-300 hover:bg-steel-300 active:-translate-y-px"
@@ -53,14 +66,27 @@ export function Nav() {
             </a>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            aria-label="Open menu"
-            className="grid size-10 place-items-center rounded-full text-bone-200 transition-colors hover:bg-bone-50/5 active:scale-95 md:hidden"
-          >
-            <List size={22} weight="bold" />
-          </button>
+          <div className="flex items-center gap-1 md:hidden">
+            {VENMO && (
+              <a
+                href={VENMO}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full bg-steel-400 px-4 py-2 text-sm font-semibold text-ink-950 active:scale-[0.98]"
+              >
+                <Heart size={14} weight="fill" />
+                Donate
+              </a>
+            )}
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              aria-label="Open menu"
+              className="grid size-10 place-items-center rounded-full text-bone-200 transition-colors hover:bg-bone-50/5 active:scale-95"
+            >
+              <List size={22} weight="bold" />
+            </button>
+          </div>
         </nav>
       </header>
 
@@ -94,7 +120,7 @@ export function Nav() {
               variants={{ shown: { transition: { staggerChildren: 0.06, delayChildren: 0.08 } } }}
               className="mt-14 flex flex-col gap-2 px-5"
             >
-              {[...LINKS, { href: '#contact', label: 'Ride with us' }].map((l) => (
+              {[...LINKS, ...(VENMO ? [{ href: VENMO, label: 'Donate' }] : []), { href: '#contact', label: 'Ride with us' }].map((l) => (
                 <motion.li
                   key={l.label}
                   variants={{
@@ -105,6 +131,7 @@ export function Nav() {
                 >
                   <a
                     href={l.href}
+                    {...(l.href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}
                     onClick={() => setOpen(false)}
                     className="display block border-b border-bone-600/20 py-5 text-4xl text-bone-50 transition-colors active:text-steel-400"
                   >
