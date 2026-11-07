@@ -74,7 +74,7 @@ export const club = {
   headline: 'Loud pipes,\nfull pantries.',
   /** One paragraph under the headline. Say concretely what the club does. */
   subhead:
-    'We are a over 40-member riding club that turns weekend runs into groceries, fuel cards, and heating bills for families across Cass and Johnson counties. Every dollar we raise stays in the community.',
+    'We are a 40-plus-member riding club that turns weekend runs into groceries, fuel cards, and heating bills for families across Cass and Johnson counties. Every dollar we raise stays in the community.',
 }
 
 /** The three numbers in the hero rail. Keep them honest and specific. */
